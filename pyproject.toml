@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hfrpkg"
+version = "0.1.2"
+description = "A package for generating and analyzing homodesmotic reaction enthalpies"
+authors = [
+    { name="Aaron Seymour", email="ads09449@uga.edu" }
+]
+dependencies = [
+    "rdkit",
+    "pulp",
+    "AaronTools"
+]
+
+[project.scripts]
+hfr = "hfrpkg.cli:main"
+multi-prep = "hfrpkg.multi.hfr_driver:main_cli"
+multi-run = "hfrpkg.multi.run_multiple:main_cli"
+multi-compute = "hfrpkg.multi.compute_multiple:main_cli"
+multi-sprun = "hfrpkg.multi.multi_spec_prep:main_cli"
+multi-spcomp = "hfrpkg.multi.multi_spec:main_cli"
+folder-compute = "hfrpkg.compute_single:main_cli"
+folder-run = "hfrpkg.run_single:main_cli"
+folder-sprun = "hfrpkg.run_spec:main_cli"
+folder-spcomp = "hfrpkg.spec_compute:main_cli"
+
